@@ -4,15 +4,15 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: clientConsumer
-          uri: lb://client-consumer
+        - id: clientConsumer  #editar
+          uri: lb://client-consumer  #editar
           #uri: http://localhost:8065
           predicates:
-            - Path=/clientConsumer/**
+            - Path=/clientConsumer/**  #editar
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-response-header, custom-user-response-header
-            - LogFilter= Mensaje, hola Julieta!
+            - LogFilter= Mensaje, hola Julieta!  #editar
       discovery:
         locator:
           enabled: true
