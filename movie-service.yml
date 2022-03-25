@@ -3,15 +3,16 @@ server:
   
 spring:
   jpa:
-    defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: false
   datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/test;AUTO_SERVER=TRUE 
-    username: sa
-    password: sa
+    url: jdbc:mysql://localhost:3306/
+    username: julipalma
+    password: julipalma
     
   sql:
     init:
