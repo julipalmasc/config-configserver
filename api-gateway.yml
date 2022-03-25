@@ -4,15 +4,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: clientConsumer  #editar
-          uri: lb://client-consumer  #editar
-          #uri: http://localhost:8065
+        - id: games-service-route
+          uri: lb://games-service
           predicates:
-            - Path=/clientConsumer/**  #editar
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-response-header, custom-user-response-header
-            - LogFilter= Mensaje, hola Julieta!  #editar
+            - Path=/games/**
+        - id: games-library-service-route
+          uri: lb://games-library-service
+          predicates:
+            - Path=/library/**
       discovery:
         locator:
           enabled: true
