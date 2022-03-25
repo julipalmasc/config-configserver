@@ -16,7 +16,7 @@ spring:
     
   sql:
     init:
-      dataLocations: classPath:/movie-service.sql
+      dataLocations: classpath:/movie-service.sql
     
 eureka:
   client:
